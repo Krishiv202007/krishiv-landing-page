@@ -1,0 +1,200 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Arial', sans-serif;
+  color: #E0E0E0;
+  line-height: 1.6;
+  background-color: #161616; /* solid color that matches hero image */
+}
+
+/* Links */
+a {
+  color: #00BFFF;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #FF6F00;
+}
+
+/* Header / Navigation */
+header {
+  background-color: rgba(33, 31, 31, 0.9);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  font-weight: bold;
+}
+
+/* Hero Section with full-page background */
+#hero {
+  background-image: url('https://blog.equinix.com/wp-content/uploads/2021/12/Cloud-Adjacent-Infrastructure_G944784888-scaled-e1650581566448-1024x763.jpg'); /* your landing page image */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-overlay {
+  background-color: rgba(33, 33, 33, 0.7); /* dark overlay for readability */
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #FF6F00;
+}
+
+#hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background-color: #A020F0;
+  color: #FFFFFF;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #FF6F00;
+}
+
+/* About Section */
+#about {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #1f1f2b; /* dark bluish-gray similar to hero image */
+  border-radius: 15px;
+  margin: 2rem auto;
+  max-width: 1000px; /* optional: keeps section nicely centered */
+  color: #E0E0E0; /* text color for readability */
+}
+
+#about h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #00BFFF;
+}
+
+/* Projects Section */
+#projects {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+#projects h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #00BFFF;
+}
+
+/* Grid layout for project cards */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+  gap: 2rem;
+  justify-items: center;
+  margin: 0 auto;
+  max-width: 1200px; /* centers the grid */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Project cards */
+.project-card {
+  padding: 1.5rem;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #d2c5c5;
+  text-shadow: 1px 1px 3px #000000;
+}
+
+/* “Coming Soon” cards with your background image */
+.project-card.coming-soon {
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/91002ee4-9200-4934-ad53-39d0f80601ac/dfvbfcs-47ef83ba-dc9a-4f27-a33c-f1decfe1b105.jpg/v1/fill/w_960,h_720,q_75,strp/far_cry_blood_dragon__the_aftermath_by_interlinkedai_dfvbfcs-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvOTEwMDJlZTQtOTIwMC00OTM0LWFkNTMtMzlkMGY4MDYwMWFjXC9kZnZiZmNzLTQ3ZWY4M2JhLWRjOWEtNGYyNy1hMzNjLWYxZGVjZmUxYjEwNS5qcGciLCJ3aWR0aCI6Ijw9OTYwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.emaIl6iHvgQVQ8ezquWDeie0ZXI2aLh8hlXRpxGeOBc'); /* your project card image */
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0,0,0,0.7);
+  opacity: 0.95;
+  text-align: center;
+}
+
+/* Hover animation for project cards */
+.project-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 25px rgba(0, 191, 255, 0.6);
+}
+
+.project-card h3 {
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(31, 31, 31, 0.9);
+  margin-top: 2rem;
+  color: #FF6F00;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 600px) {
+  #hero h1 {
+    font-size: 2rem;
+  }
+
+  #hero p {
+    font-size: 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
